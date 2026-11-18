@@ -180,12 +180,12 @@
         <div class="day__left">
           <span class="kicker">02 — 24 hours with your phone</span>
           <div class="day__steps">
-            <div class="day__step is-active"><span class="day__clock">07:00</span><h3>It wakes you up.</h3><p>Snooze. Snooze. Snooze. First thing you touch every morning isn't a person.</p></div>
-            <div class="day__step"><span class="day__clock">08:14</span><h3>Still in bed. Scrolling.</h3><p>Forty minutes of feed before your feet hit the floor. Productive.</p></div>
-            <div class="day__step"><span class="day__clock">12:31</span><h3>The food eats second.</h3><p>Nobody touches the plate until the phone has had its photo.</p></div>
-            <div class="day__step"><span class="day__clock">15:47</span><h3>"Phone under the table."</h3><p>The meeting is muted. The group chat is not.</p></div>
-            <div class="day__step"><span class="day__clock">23:58</span><h3>Screen Time report.</h3><p>Up 34% from last week. You swipe it away. On your phone.</p></div>
-            <div class="day__step"><span class="day__clock">03:07</span><h3>The charts never sleep.</h3><p>Neither do you. One eye open, one thumb on the buy button.</p></div>
+            <div class="day__step is-active"><span class="day__clock">7:00<small>AM</small></span><h3>It wakes you up.</h3><p>Snooze. Snooze. Snooze. First thing you touch every morning isn't a person.</p></div>
+            <div class="day__step"><span class="day__clock">8:14<small>AM</small></span><h3>Still in bed. Scrolling.</h3><p>Forty minutes of feed before your feet hit the floor. Productive.</p></div>
+            <div class="day__step"><span class="day__clock">12:31<small>PM</small></span><h3>The food eats second.</h3><p>Nobody touches the plate until the phone has had its photo.</p></div>
+            <div class="day__step"><span class="day__clock">3:47<small>PM</small></span><h3>"Phone under the table."</h3><p>The meeting is muted. The group chat is not.</p></div>
+            <div class="day__step"><span class="day__clock">11:58<small>PM</small></span><h3>Screen Time report.</h3><p>Up 34% from last week. You swipe it away. On your phone.</p></div>
+            <div class="day__step"><span class="day__clock">3:07<small>AM</small></span><h3>The charts never sleep.</h3><p>Neither do you. One eye open, one thumb on the buy button.</p></div>
           </div>
           <div class="day__progress"><span id="dayBar"></span></div>
         </div>
@@ -198,17 +198,17 @@
 
                 <!-- 07:00 alarm -->
                 <div class="scr scr--alarm is-active">
-                  <div class="scr__status"><span>7:00</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="scr__status"><span>7:00 AM</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
                   <div class="alarm__ring"><span></span><span></span><span></span></div>
                   <div class="alarm__label">Alarm</div>
-                  <div class="alarm__time">7:00</div>
+                  <div class="alarm__time">7:00<span class="ampm">AM</span></div>
                   <div class="alarm__sub">Wake up &amp; check $PHONE</div>
                   <div class="alarm__btns"><span>Snooze (5)</span><span>Stop</span></div>
                 </div>
 
                 <!-- 08:14 feed -->
                 <div class="scr scr--feed">
-                  <div class="scr__status"><span>8:14</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="scr__status"><span>8:14 AM</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
                   <div class="feed">
                     <div class="feed__post"><div class="feed__head"><i></i><b>degen.sol</b></div><div class="feed__media m1"></div><p>gm. phone in hand since 6am</p></div>
                     <div class="feed__post"><div class="feed__head"><i></i><b>chartwizard</b></div><div class="feed__media m2"></div><p>$PHONE chart looking like a charging bar</p></div>
@@ -230,7 +230,7 @@
 
                 <!-- 15:47 chat -->
                 <div class="scr scr--chat">
-                  <div class="scr__status"><span>15:47</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="scr__status"><span>3:47 PM</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
                   <div class="chat__banner"><b>Calendar</b> Q4 Strategy Sync · you are muted</div>
                   <div class="chat__head"><i></i><div><b>$PHONE holders</b><small>8,421 members · 312 online</small></div></div>
                   <div class="chat__list">
@@ -244,7 +244,7 @@
 
                 <!-- 23:58 screen time -->
                 <div class="scr scr--time">
-                  <div class="scr__status"><span>23:58</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="scr__status"><span>11:58 PM</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
                   <div class="st__label">Screen Time</div>
                   <div class="st__big">11h 52m</div>
                   <div class="st__sub">Daily average · <b>↑ 34%</b> from last week</div>
@@ -259,7 +259,7 @@
 
                 <!-- 03:07 chart -->
                 <div class="scr scr--chart">
-                  <div class="scr__status"><span>3:07</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="scr__status"><span>3:07 AM</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
                   <div class="mini__head"><b>$PHONE</b><span class="up"><svg class="i" aria-hidden="true"><use href="#i-up"/></svg> 420.69%</span></div>
                   <div class="mini__price">$0.00<span>0</span>69</div>
                   <canvas class="mini__chart" id="dayChart" width="600" height="700"></canvas>
@@ -543,7 +543,7 @@
             <div class="device__frame">
               <div class="device__island"></div>
               <div class="device__screen device__screen--dark">
-                <div class="scr__status scr__status--light"><span id="tradeClock">3:07</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                <div class="scr__status scr__status--light"><span id="tradeClock">3:07 AM</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
                 <div class="tt__head">
                   <div class="tt__token"><img src="assets/favicon-32.png" srcset="assets/apple-touch-icon.png 2x" alt="" /><div><b>$PHONE</b><small>Phonecoin · Solana</small></div></div>
                   <div class="tt__tf"><span>1m</span><b>5m</b><span>1h</span><span>1d</span></div>

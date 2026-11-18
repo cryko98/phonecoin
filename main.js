@@ -22,6 +22,10 @@ const CONFIG = {
   const ogShot = new URLSearchParams(location.search).has("og"); // ?og = static hero for the link-preview screenshot
   if (ogShot) document.documentElement.classList.add("og-shot");
 
+  // 12-hour clock (AM/PM)
+  const clock12 = (d) => ({ hm: (d.getHours() % 12 || 12) + ":" + String(d.getMinutes()).padStart(2, "0"), ap: d.getHours() < 12 ? "AM" : "PM" });
+  const setClock = (el, d, big) => { const c = clock12(d); if (big) el.innerHTML = c.hm + "<span class=\"ampm\">" + c.ap + "</span>"; else el.textContent = c.hm + " " + c.ap; };
+
   const store = {
     get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
     set(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
@@ -233,7 +237,7 @@ const CONFIG = {
   // clocks + date on the mini phone
   const syncClocks = () => {
     const d = new Date();
-    $$(".js-clock").forEach((c) => (c.textContent = d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0")));
+    $$(".js-clock").forEach((c) => setClock(c, d, c.classList.contains("os__time")));
     $$(".js-date").forEach((c) => (c.textContent = d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })));
   };
   syncClocks(); setInterval(syncClocks, 15000);
@@ -309,10 +313,9 @@ const CONFIG = {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   function tickClock() {
     const d = new Date();
-    const hm = d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
-    $("#lockTime").textContent = hm;
+    setClock($("#lockTime"), d, true);
     $("#lockDate").textContent = `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]}`;
-    const tc = $("#tradeClock"); if (tc) tc.textContent = hm;
+    const tc = $("#tradeClock"); if (tc) setClock(tc, d, false);
   }
   tickClock(); setInterval(tickClock, 15000);
 
