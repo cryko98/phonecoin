@@ -281,6 +281,8 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
   mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
   filter: drop-shadow(0 40px 60px rgba(60,60,170,.35));
 }
+.hero__phone img { animation: bob 6s ease-in-out infinite alternate; }
+.og-shot .hero__phone img { animation: none; }
 .hero__glare {
   position: absolute; inset: 10%; border-radius: 40%; pointer-events: none; mix-blend-mode: soft-light;
   background: radial-gradient(circle at var(--gx, 30%) var(--gy, 20%), rgba(255,255,255,.9), transparent 45%);

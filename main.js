@@ -141,7 +141,7 @@ const CONFIG = {
   // --- photos app ---
   const photos = $("#osPhotos");
   const viewer = $("#osPhotoView");
-  ["assets/img/logo.jpg", "assets/img/cooper-dynatac.jpg", "assets/img/obama-biden-iphone.jpg"]
+  ["assets/img/logo-phone.jpg", "assets/img/cooper-dynatac.jpg", "assets/img/obama-biden-iphone.jpg"]
     .concat((window.PHONE_GALLERY || []).map((p) => "assets/people/" + encodeURI(p.file)))
     .forEach((src) => {
       const b = document.createElement("button");
