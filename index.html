@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Phonecoin ($PHONE) — The coin you never put down</title>
+  <meta name="description" content="Phonecoin ($PHONE) on Solana. Nobody lives without a phone anymore. We wake up with it, eat with it, trade with it. $PHONE is the coin for the one thing all of humanity agrees on." />
+  <meta name="theme-color" content="#dfe4ff" />
+  <meta property="og:title" content="Phonecoin — $PHONE on Solana" />
+  <meta property="og:description" content="The coin you never put down. Contract address: coming soon." />
+  <meta property="og:image" content="assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:image" content="assets/og-image.jpg" />
+  <meta name="twitter:title" content="Phonecoin — $PHONE on Solana" />
+  <meta name="twitter:description" content="The most held asset in the world. Contract address: coming soon." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-loading">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M6 6V5a2 2 0 0 1 2-2h9"/><rect x="3" y="6" width="18" height="14" rx="3"/><path d="M16 13h2"/></symbol>
+    <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 3h14M5 21h14"/><path d="M7 3v3a5 5 0 0 0 10 0V3M7 21v-3a5 5 0 0 1 10 0v3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="7" width="17" height="10" rx="2.5"/><path d="M22 11v2"/><rect x="4.5" y="9.5" width="3" height="5" rx="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-candles" viewBox="0 0 24 24"><path d="M7 3v4M7 17v4M17 3v6M17 17v4"/><rect x="4.5" y="7" width="5" height="10" rx="1.2"/><rect x="14.5" y="9" width="5" height="8" rx="1.2"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M7 4L3 8l4 4M3 8h14M17 12l4 4-4 4M21 16H7"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+    <symbol id="i-flip" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18 3v4h-4M6 21v-4h4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 0c.6 6.2 5.8 11.4 12 12-6.2.6-11.4 5.8-12 12-.6-6.2-5.8-11.4-12-12C6.2 11.4 11.4 6.2 12 0z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-xlogo" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M21.5 3.5L2.8 10.7c-1 .4-1 1.8.1 2.1l4.7 1.5 1.8 5.6c.3.9 1.4 1.1 2 .4l2.6-2.7 4.8 3.5c.8.6 1.9.1 2.1-.9L23 4.9c.2-1-.7-1.8-1.5-1.4zM9.3 14.6l8.6-7.6-6.9 8.9-.3 3.2z"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="5"/><path d="M11.5 11.5L21 2M17 6l3 3M14 9l2 2"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v6a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 2v3M12 2v3"/></symbol>
+    <symbol id="i-hands" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="M12 15l-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></symbol>
+    <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="3"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15v3M8 18h.01M12 18h.01"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+    <symbol id="i-handset" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></symbol>
+    <symbol id="i-status" viewBox="0 0 66 14"><g fill="currentColor" stroke="none"><rect x="0" y="9" width="3" height="4" rx="1"/><rect x="5" y="6" width="3" height="7" rx="1"/><rect x="10" y="3" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="13" rx="1"/><path d="M32 13l-2.4-2.6a3.4 3.4 0 0 1 4.8 0zM26.8 7.6a7.4 7.4 0 0 1 10.4 0l-1.7 1.8a5 5 0 0 0-7 0zM24 4.8a11.4 11.4 0 0 1 16 0l-1.7 1.8a9 9 0 0 0-12.6 0z"/><rect x="46" y="3.5" width="12" height="7" rx="1.5"/><rect x="64" y="5" width="1.8" height="4" rx=".9"/></g><rect x="44" y="1.5" width="19" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".5"/></symbol>
+  </svg>
+
+  <!-- ============ LOCK SCREEN INTRO ============ -->
+  <div class="lock" id="lock" aria-hidden="true">
+    <div class="lock__bg"></div>
+    <div class="lock__top">
+      <div class="lock__date" id="lockDate">Tuesday, 18 November</div>
+      <div class="lock__time" id="lockTime">9:41</div>
+    </div>
+    <div class="lock__notes">
+      <div class="note"><span class="note__app note__app--sol"><svg class="i" aria-hidden="true"><use href="#i-wallet"/></svg></span><div><b>Phantom</b><p>You received 1,000,000 $PHONE</p></div><time>now</time></div>
+      <div class="note"><span class="note__app note__app--time"><svg class="i" aria-hidden="true"><use href="#i-hourglass"/></svg></span><div><b>Screen Time</b><p>Your daily average was 9h 41m</p></div><time>2m</time></div>
+      <div class="note"><span class="note__app note__app--msg"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span><div><b>Mom</b><p>are you alive?? call me</p></div><time>3h</time></div>
+    </div>
+    <button class="lock__unlock" id="unlock" type="button"><span>slide to unlock $PHONE</span></button>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="Phonecoin home">
+      <img src="assets/favicon-32.png" srcset="assets/apple-touch-icon.png 2x" alt="" width="32" height="32" />
+      <span>Phonecoin</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#lore">Lore</a>
+      <a href="#day">24h</a>
+      <a href="#held">Most held</a>
+      <a href="#evolution">Evolution</a>
+      <a href="#famous">Hall of Fame</a>
+      <a href="#trade">Trading</a>
+      <a href="#buy">How to buy</a>
+    </nav>
+    <div class="nav__right">
+      <a href="#" class="nav__x magnetic" data-social="x" aria-label="Phonecoin on X"><svg class="i" aria-hidden="true"><use href="#i-xlogo"/></svg></a>
+      <a href="#buy" class="btn btn--dark btn--sm magnetic">Buy $PHONE</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="grain" aria-hidden="true"></div>
+
+      <div class="hero__eyebrow reveal-up">
+        <span class="pill"><span class="dot"></span> $PHONE · Built on Solana</span>
+      </div>
+
+      <div class="hero__stage" id="heroStage">
+        <h1 class="hero__title" aria-label="Phonecoin">
+          <span class="hero__word hero__word--back">PHONE</span>
+          <span class="hero__word hero__word--front">COIN</span>
+        </h1>
+        <div class="hero__phone" id="heroPhone">
+          <img src="assets/img/logo.jpg" alt="A glass phone held in a hand — the Phonecoin mascot" width="1254" height="1254" />
+          <div class="hero__glare"></div>
+        </div>
+
+        <div class="float f1" data-depth="1.6"><span class="f-ico f-ico--green"><svg class="i" aria-hidden="true"><use href="#i-trend"/></svg></span><div><b>$PHONE</b><small>+1,337.42% today</small></div></div>
+        <div class="float f2" data-depth="-1.2"><span class="f-ico f-ico--violet"><svg class="i" aria-hidden="true"><use href="#i-swap"/></svg></span><div><b>Phantom</b><small>Swap confirmed · 0.4s</small></div></div>
+        <div class="float f3" data-depth="2.2"><span class="f-ico f-ico--peach"><svg class="i" aria-hidden="true"><use href="#i-hourglass"/></svg></span><div><b>Screen Time</b><small>14h 22m · new record</small></div></div>
+        <div class="float f4" data-depth="-2"><span class="f-ico f-ico--blue"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span><div><b>group chat (99+)</b><small>ser… wen CA?</small></div></div>
+        <div class="float f5" data-depth="1"><span class="f-ico f-ico--red"><svg class="i" aria-hidden="true"><use href="#i-battery"/></svg></span><div><b>Battery 3%</b><small>still trading</small></div></div>
+      </div>
+
+      <div class="hero__bottom">
+        <p class="hero__lead reveal-up">Eight billion people. One habit.<br /><em>You're probably reading this on one right now.</em></p>
+        <div class="hero__cta reveal-up">
+          <a href="#buy" class="btn btn--dark magnetic">Buy $PHONE</a>
+          <a href="#lore" class="btn btn--glass magnetic">Read the lore</a>
+        </div>
+        <button class="ca reveal-up" type="button" data-ca>
+          <span class="ca__label">CA</span>
+          <span class="ca__value">Coming soon</span>
+          <span class="ca__live"><span class="dot dot--pulse"></span> stay on your phone</span>
+        </button>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span></span>scroll — like you always do</div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Wake up</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Eat</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Work</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Buy $PHONE</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Sleep</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b>
+        <span>Wake up</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Eat</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Work</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Buy $PHONE</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Sleep</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b><span>Check phone</span><b><svg class="i" aria-hidden="true"><use href="#i-spark"/></svg></b>
+      </div>
+    </div>
+
+    <!-- ============ LORE ============ -->
+    <section class="lore" id="lore">
+      <div class="section-head">
+        <span class="kicker">01 — The lore</span>
+      </div>
+      <p class="lore__text" data-words>
+        Look around. Nobody lives without a phone anymore. We wake up to it, eat with it, walk into traffic with it and fall asleep on it. It is our bank, our map, our camera, our friends and our casino. The phone stopped being a device a long time ago. <strong>It became an organ.</strong> $PHONE is the coin for the one thing all of humanity actually agrees on.
+      </p>
+
+      <div class="stats">
+        <div class="stat glass">
+          <span class="stat__num"><span data-count="5" data-suffix="B+">0</span></span>
+          <span class="stat__label">smartphone users on Earth (est.)</span>
+        </div>
+        <div class="stat glass">
+          <span class="stat__num"><span data-count="96" data-suffix="×">0</span></span>
+          <span class="stat__label">times a day the average person checks it (est.)</span>
+        </div>
+        <div class="stat glass">
+          <span class="stat__num"><span data-count="0" data-suffix="">0</span></span>
+          <span class="stat__label">people who could go a week without it</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 24H / DAY IN THE LIFE ============ -->
+    <section class="day" id="day">
+      <div class="day__pin">
+        <div class="day__left">
+          <span class="kicker">02 — 24 hours with your phone</span>
+          <div class="day__steps">
+            <div class="day__step is-active"><span class="day__clock">07:00</span><h3>It wakes you up.</h3><p>Snooze. Snooze. Snooze. First thing you touch every morning isn't a person.</p></div>
+            <div class="day__step"><span class="day__clock">08:14</span><h3>Still in bed. Scrolling.</h3><p>Forty minutes of feed before your feet hit the floor. Productive.</p></div>
+            <div class="day__step"><span class="day__clock">12:31</span><h3>The food eats second.</h3><p>Nobody touches the plate until the phone has had its photo.</p></div>
+            <div class="day__step"><span class="day__clock">15:47</span><h3>"Phone under the table."</h3><p>The meeting is muted. The group chat is not.</p></div>
+            <div class="day__step"><span class="day__clock">23:58</span><h3>Screen Time report.</h3><p>Up 34% from last week. You swipe it away. On your phone.</p></div>
+            <div class="day__step"><span class="day__clock">03:07</span><h3>The charts never sleep.</h3><p>Neither do you. One eye open, one thumb on the buy button.</p></div>
+          </div>
+          <div class="day__progress"><span id="dayBar"></span></div>
+        </div>
+
+        <div class="day__right">
+          <div class="device device--day" id="dayDevice">
+            <div class="device__frame">
+              <div class="device__island"></div>
+              <div class="device__screen">
+
+                <!-- 07:00 alarm -->
+                <div class="scr scr--alarm is-active">
+                  <div class="scr__status"><span>7:00</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="alarm__ring"><span></span><span></span><span></span></div>
+                  <div class="alarm__label">Alarm</div>
+                  <div class="alarm__time">7:00</div>
+                  <div class="alarm__sub">Wake up &amp; check $PHONE</div>
+                  <div class="alarm__btns"><span>Snooze (5)</span><span>Stop</span></div>
+                </div>
+
+                <!-- 08:14 feed -->
+                <div class="scr scr--feed">
+                  <div class="scr__status"><span>8:14</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="feed">
+                    <div class="feed__post"><div class="feed__head"><i></i><b>degen.sol</b></div><div class="feed__media m1"></div><p>gm. phone in hand since 6am</p></div>
+                    <div class="feed__post"><div class="feed__head"><i></i><b>chartwizard</b></div><div class="feed__media m2"></div><p>$PHONE chart looking like a charging bar</p></div>
+                    <div class="feed__post"><div class="feed__head"><i></i><b>mom</b></div><div class="feed__media m3"></div><p>is this the facebook</p></div>
+                  </div>
+                  <div class="feed__pill">You've scrolled 1.2 km today</div>
+                </div>
+
+                <!-- 12:31 camera -->
+                <div class="scr scr--cam">
+                  <div class="cam__view">
+                    <div class="cam__plate"><i></i><i></i><i></i></div>
+                    <div class="cam__grid"></div>
+                    <div class="cam__focus"></div>
+                  </div>
+                  <div class="cam__modes"><span>VIDEO</span><b>PHOTO</b><span>PORTRAIT</span></div>
+                  <div class="cam__bar"><i class="cam__thumb"></i><i class="cam__shutter"></i><i class="cam__flip"><svg class="i" aria-hidden="true"><use href="#i-flip"/></svg></i></div>
+                </div>
+
+                <!-- 15:47 chat -->
+                <div class="scr scr--chat">
+                  <div class="scr__status"><span>15:47</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="chat__banner"><b>Calendar</b> Q4 Strategy Sync · you are muted</div>
+                  <div class="chat__head"><i></i><div><b>$PHONE holders</b><small>8,421 members · 312 online</small></div></div>
+                  <div class="chat__list">
+                    <div class="msg msg--in">ser… is this the bottom</div>
+                    <div class="msg msg--in">wen CA</div>
+                    <div class="msg msg--out">in a meeting rn. buying under the table</div>
+                    <div class="msg msg--in">boss is looking at you</div>
+                    <div class="msg msg--out">boss also holds</div>
+                  </div>
+                </div>
+
+                <!-- 23:58 screen time -->
+                <div class="scr scr--time">
+                  <div class="scr__status"><span>23:58</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="st__label">Screen Time</div>
+                  <div class="st__big">11h 52m</div>
+                  <div class="st__sub">Daily average · <b>↑ 34%</b> from last week</div>
+                  <div class="st__bars"><i style="--h:52%"></i><i style="--h:64%"></i><i style="--h:58%"></i><i style="--h:71%"></i><i style="--h:80%"></i><i style="--h:92%"></i><i style="--h:100%"></i></div>
+                  <div class="st__days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+                  <div class="st__apps">
+                    <div><span class="st__dot" style="--c:#9b8cff"></span>Wallet<b>6h 12m</b></div>
+                    <div><span class="st__dot" style="--c:#7fd3ff"></span>Charts<b>3h 40m</b></div>
+                    <div><span class="st__dot" style="--c:#ffb59e"></span>Group chats<b>2h 00m</b></div>
+                  </div>
+                </div>
+
+                <!-- 03:07 chart -->
+                <div class="scr scr--chart">
+                  <div class="scr__status"><span>3:07</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                  <div class="mini__head"><b>$PHONE</b><span class="up"><svg class="i" aria-hidden="true"><use href="#i-up"/></svg> 420.69%</span></div>
+                  <div class="mini__price">$0.00<span>0</span>69</div>
+                  <canvas class="mini__chart" id="dayChart" width="600" height="700"></canvas>
+                  <div class="mini__buy">Buy $PHONE</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MOST HELD ASSET ============ -->
+    <section class="held" id="held">
+      <div class="held__hero">
+        <span class="kicker">03 — Diamond hands since 2007</span>
+        <h2 class="held__title"><span>The most</span> <span>held asset</span> <em>in the world.</em></h2>
+        <p class="held__lead">Forget gold. Forget Bitcoin. The asset with the most holders, the longest hold time and the strongest grip on Earth is in your hand right now. Nobody has ever paper-handed their phone.</p>
+        <div class="held__live glass">
+          <span class="dot dot--pulse"></span>
+          <span>Held right now by</span>
+          <b id="heldCount">5,000,000,000</b>
+          <span>hands</span>
+        </div>
+      </div>
+
+      <!-- leaderboard -->
+      <div class="board glass" role="table" aria-label="Most held assets on Earth">
+        <div class="board__top"><b>Most held assets on Earth</b><small>Ranked by grip strength · data: vibes</small></div>
+        <div class="board__row board__row--head" role="row">
+          <span role="columnheader">#</span><span role="columnheader">Asset</span><span role="columnheader">Holders</span><span role="columnheader">Avg. hold time</span><span role="columnheader">Paper hands</span>
+        </div>
+        <div class="board__row board__row--first" role="row">
+          <span role="cell">1</span>
+          <span role="cell" class="board__asset"><img src="assets/favicon-32.png" srcset="assets/apple-touch-icon.png 2x" alt="" /> Your phone <i>$PHONE</i></span>
+          <span role="cell">5B+</span><span role="cell">24 / 7 / 365</span><span role="cell" class="g">0</span>
+        </div>
+        <div class="board__row" role="row">
+          <span role="cell">2</span><span role="cell" class="board__asset"><svg class="i" aria-hidden="true"><use href="#i-key"/></svg> Your keys</span>
+          <span role="cell">Billions</span><span role="cell">Until you lose them</span><span role="cell" class="r">Daily</span>
+        </div>
+        <div class="board__row" role="row">
+          <span role="cell">3</span><span role="cell" class="board__asset"><svg class="i" aria-hidden="true"><use href="#i-cup"/></svg> Morning coffee</span>
+          <span role="cell">Billions</span><span role="cell">12 minutes</span><span role="cell" class="r">Every cup</span>
+        </div>
+        <div class="board__row" role="row">
+          <span role="cell">4</span><span role="cell" class="board__asset"><svg class="i" aria-hidden="true"><use href="#i-hands"/></svg> Someone's hand</span>
+          <span role="cell">Declining</span><span role="cell">4 sec (until a notification)</span><span role="cell" class="r">Most</span>
+        </div>
+      </div>
+
+      <!-- places -->
+      <div class="places__head">
+        <h3 class="places__title">Places your phone went today <em>that it really shouldn't have.</em></h3>
+      </div>
+      <div class="places">
+
+        <article class="place place--wide">
+          <div class="place__art">
+            <svg viewBox="0 0 160 160" class="pict" aria-hidden="true">
+              <defs><linearGradient id="gPor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d9defa"/></linearGradient></defs>
+              <rect x="40" y="18" width="80" height="40" rx="10" fill="url(#gPor)" stroke="#aab3e6" stroke-width="2"/>
+              <rect x="94" y="28" width="16" height="6" rx="3" fill="#aab3e6"/>
+              <path d="M28 66h104c0 30-20 48-52 48S28 96 28 66z" fill="url(#gPor)" stroke="#aab3e6" stroke-width="2"/>
+              <ellipse cx="80" cy="66" rx="52" ry="8" fill="#eef0ff" stroke="#aab3e6" stroke-width="2"/>
+              <path d="M62 112h36l-4 26H66z" fill="url(#gPor)" stroke="#aab3e6" stroke-width="2"/>
+              <g class="pict__phone"><rect x="112" y="78" width="30" height="54" rx="7" fill="#1b1f48"/><rect x="115" y="83" width="24" height="44" rx="4" fill="#7ef0b4"/><path d="M118 118l5-7 4 3 5-9 4 4" fill="none" stroke="#0c0e2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+            </svg>
+          </div>
+          <div class="place__body">
+            <span class="place__pin"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg> Bathroom</span>
+            <h4>The toilet</h4>
+            <p>Planned visit: 3 minutes. Actual visit: one full market cycle. You walk out with numb legs and a new bag.</p>
+            <div class="meter"><div class="meter__row"><small>Without phone</small><span class="meter__bar"><i style="--w:10%"></i></span><b>3 min</b></div><div class="meter__row"><small>With phone</small><span class="meter__bar"><i style="--w:100%"></i></span><b>27 min</b></div></div>
+          </div>
+        </article>
+
+        <article class="place">
+          <div class="place__art">
+            <svg viewBox="0 0 160 160" class="pict" aria-hidden="true">
+              <path d="M34 26h50a14 14 0 0 1 14 14v6" fill="none" stroke="#aab3e6" stroke-width="6" stroke-linecap="round"/>
+              <path d="M74 46h48a4 4 0 0 1 4 4c0 6-6 10-12 10H82c-6 0-12-4-12-10a4 4 0 0 1 4-4z" fill="#dfe3ff" stroke="#aab3e6" stroke-width="2"/>
+              <g class="pict__drops" stroke="#8c9dff" stroke-width="3" stroke-linecap="round"><path d="M82 70v10"/><path d="M92 74v10"/><path d="M102 70v10"/><path d="M112 74v10"/><path d="M87 92v10"/><path d="M107 92v10"/><path d="M97 98v10"/></g>
+              <g class="pict__phone"><rect x="34" y="92" width="38" height="52" rx="6" fill="#ffffff" opacity=".55" stroke="#aab3e6" stroke-width="2" stroke-dasharray="4 3"/><rect x="40" y="96" width="26" height="44" rx="6" fill="#1b1f48"/><rect x="43" y="100" width="20" height="35" rx="3" fill="#9cd2ff"/></g>
+            </svg>
+          </div>
+          <div class="place__body">
+            <span class="place__pin"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg> Shower</span>
+            <h4>The shower</h4>
+            <p>Water resistance: IP68. Your judgement: IP0. Sealed in a zip bag, balanced on the shampoo, chart open.</p>
+          </div>
+        </article>
+
+        <article class="place">
+          <div class="place__art">
+            <svg viewBox="0 0 160 160" class="pict" aria-hidden="true">
+              <circle cx="80" cy="84" r="50" fill="#ffffff" stroke="#aab3e6" stroke-width="2"/>
+              <circle cx="80" cy="84" r="36" fill="#f3f4ff" stroke="#d6dbf7" stroke-width="2"/>
+              <path d="M18 40v34M12 40v14a6 6 0 0 0 12 0V40M18 74v56" stroke="#aab3e6" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <path d="M142 40c-8 6-8 26 0 34v56" stroke="#aab3e6" stroke-width="3" stroke-linecap="round" fill="none"/>
+              <g class="pict__phone"><rect x="62" y="56" width="36" height="58" rx="7" fill="#1b1f48" transform="rotate(-12 80 85)"/><rect x="66" y="61" width="28" height="48" rx="4" fill="#b9a3ff" transform="rotate(-12 80 85)"/></g>
+            </svg>
+          </div>
+          <div class="place__body">
+            <span class="place__pin"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg> Dinner</span>
+            <h4>The dinner table</h4>
+            <p>Face down means respect. Face up means checking the chart every forty seconds "for the time".</p>
+          </div>
+        </article>
+
+        <article class="place">
+          <div class="place__art">
+            <svg viewBox="0 0 160 160" class="pict" aria-hidden="true">
+              <rect x="20" y="62" width="14" height="36" rx="4" fill="#8c9dff"/><rect x="34" y="54" width="14" height="52" rx="4" fill="#6f7ff5"/>
+              <rect x="112" y="54" width="14" height="52" rx="4" fill="#6f7ff5"/><rect x="126" y="62" width="14" height="36" rx="4" fill="#8c9dff"/>
+              <rect x="48" y="76" width="64" height="8" rx="4" fill="#aab3e6"/>
+              <g class="pict__phone"><rect x="62" y="102" width="36" height="46" rx="6" fill="#1b1f48"/><rect x="65" y="106" width="30" height="36" rx="3" fill="#ffc4b2"/></g>
+            </svg>
+          </div>
+          <div class="place__body">
+            <span class="place__pin"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg> Gym</span>
+            <h4>The gym</h4>
+            <p>Three sets. Forty-five minutes of scrolling between them. The only thing getting pumped is the chart.</p>
+          </div>
+        </article>
+
+        <article class="place">
+          <div class="place__art">
+            <svg viewBox="0 0 160 160" class="pict" aria-hidden="true">
+              <path d="M38 30h32c0 22-6 36-16 36S38 52 38 30z" fill="#ffc4b2" stroke="#e79a87" stroke-width="2"/>
+              <path d="M54 66v44M42 112h24" stroke="#aab3e6" stroke-width="3" stroke-linecap="round"/>
+              <path d="M90 30h32c0 22-6 36-16 36S90 52 90 30z" fill="#ffc4b2" stroke="#e79a87" stroke-width="2"/>
+              <path d="M106 66v44M94 112h24" stroke="#aab3e6" stroke-width="3" stroke-linecap="round"/>
+              <g class="pict__phone"><rect x="64" y="94" width="32" height="52" rx="6" fill="#1b1f48"/><rect x="67" y="98" width="26" height="42" rx="3" fill="#7ef0b4"/></g>
+            </svg>
+          </div>
+          <div class="place__body">
+            <span class="place__pin"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg> Date night</span>
+            <h4>The date</h4>
+            <p>They went to the bathroom. You checked $PHONE. They came back. You were still checking. They took their phone to the bathroom too.</p>
+          </div>
+        </article>
+
+        <article class="place place--alert">
+          <div class="place__art">
+            <svg viewBox="0 0 160 160" class="pict" aria-hidden="true">
+              <rect x="22" y="52" width="104" height="56" rx="14" fill="none" stroke="#ff8796" stroke-width="5"/>
+              <rect x="130" y="70" width="10" height="20" rx="4" fill="#ff8796"/>
+              <rect class="pict__low" x="32" y="62" width="10" height="36" rx="5" fill="#ff4d63"/>
+            </svg>
+          </div>
+          <div class="place__body">
+            <span class="place__pin place__pin--red"><svg class="i" aria-hidden="true"><use href="#i-battery"/></svg> 1% remaining</span>
+            <h4>Battery at 1%</h4>
+            <p>The only crash that truly scares you. Grown adults sprint through airports for a wall socket.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="held__strip" aria-hidden="true">
+        <span>Never sold</span><b><svg class="i"><use href="#i-spark"/></svg></b><span>Never staked</span><b><svg class="i"><use href="#i-spark"/></svg></b><span>Never let go</span><b><svg class="i"><use href="#i-spark"/></svg></b><span>Never more than an arm's length away</span>
+      </div>
+    </section>
+
+    <!-- ============ EVOLUTION ============ -->
+    <section class="evo" id="evolution">
+      <div class="evo__pin">
+        <div class="evo__head">
+          <span class="kicker">04 — The evolution</span>
+          <h2 class="h2">From a brick on a street corner<br /><em>to the trading desk in your pocket.</em></h2>
+        </div>
+        <div class="evo__track" id="evoTrack">
+
+          <article class="era era--photo">
+            <div class="era__year">1973</div>
+            <div class="era__media"><img src="assets/img/cooper-dynatac.jpg" alt="Martin Cooper holding a Motorola DynaTAC prototype phone to his ear" loading="lazy" /></div>
+            <div class="era__body"><h3>The first call</h3><p>Motorola's Martin Cooper walks down a New York street and makes the first public handheld cellular call. Humanity has not hung up since.</p></div>
+          </article>
+
+          <article class="era era--photo">
+            <div class="era__year">1983</div>
+            <div class="era__media"><img src="assets/phones/dynatac-8000x.jpg" alt="Motorola DynaTAC 8000X, the first commercial handheld mobile phone" loading="lazy" /></div>
+            <div class="era__body"><h3>DynaTAC 8000X — "The Brick"</h3><p>Ten hours to charge, thirty minutes of talk, about $3,995 at launch. A status symbol you could also use to defend yourself.</p></div>
+          </article>
+
+          <article class="era era--photo">
+            <div class="era__year">1996</div>
+            <div class="era__media"><img src="assets/phones/startac.jpg" alt="Motorola StarTAC flip phone, opened" loading="lazy" /></div>
+            <div class="era__body"><h3>The flip</h3><p>Hanging up became an art form. Snapping it shut was the most satisfying sound of the decade.</p></div>
+          </article>
+
+          <article class="era">
+            <div class="era__year">2000</div>
+            <div class="era__media era__media--cut"><img src="assets/phones/nokia-3310.png" alt="Nokia 3310 in blue" loading="lazy" /></div>
+            <div class="era__body"><h3>The indestructible one</h3><p>A battery that lasted a week, a case that survived a war, and a game about a snake. Peak civilisation.</p></div>
+          </article>
+
+          <article class="era era--photo">
+            <div class="era__year">2004</div>
+            <div class="era__media"><img src="assets/phones/razr-v3.jpg" alt="Pink Motorola RAZR V3 held in a hand" loading="lazy" /></div>
+            <div class="era__body"><h3>The razor-thin flex</h3><p>Paper-thin, metal, impossibly cool. The first phone people bought purely to be seen holding it.</p></div>
+          </article>
+
+          <article class="era era--photo">
+            <div class="era__year">2000s</div>
+            <div class="era__media"><img src="assets/phones/blackberry.jpg" alt="BlackBerry with a full QWERTY keyboard" loading="lazy" /></div>
+            <div class="era__body"><h3>The keyboard years</h3><p>Email on the go turned into email all the time. The first phone addiction got its own nickname. Thumbs got stronger.</p></div>
+          </article>
+
+          <article class="era era--photo">
+            <div class="era__year">2007</div>
+            <div class="era__media"><img src="assets/phones/iphone-2007.jpg" alt="The original 2007 iPhone standing in its dock" loading="lazy" /></div>
+            <div class="era__body"><h3>"Apple reinvents the phone."</h3><p>Steve Jobs walks on stage with an iPod, a phone and an internet communicator — in one device. The keyboard dies. The touchscreen era begins.</p></div>
+          </article>
+
+          <article class="era era--photo">
+            <div class="era__year">2010s</div>
+            <div class="era__media"><img src="assets/img/obama-biden-iphone.jpg" alt="Barack Obama and Joe Biden looking at an iPhone together at the White House" loading="lazy" /></div>
+            <div class="era__body"><h3>Everyone. Everywhere.</h3><p>App stores, front cameras, selfies, push notifications. Even the most powerful office on Earth huddles around a 3.5-inch screen.</p></div>
+          </article>
+
+          <article class="era era--dark">
+            <div class="era__year">2020s</div>
+            <div class="era__media era__media--svg">
+              <div class="mini-device">
+                <div class="mini-device__screen">
+                  <div class="mini-device__row"><b>SOL</b><span>Solana</span><em>$PHONE</em></div>
+                  <canvas class="evo-chart" width="400" height="300"></canvas>
+                  <div class="mini-device__btns"><span class="b">Buy</span><span class="s">Sell</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="era__body"><h3>The trading terminal</h3><p>Wallets, charts and one-tap swaps. Wall Street needed six screens. You need one, and it fits in your pocket — on Solana, a swap settles before you can blink.</p></div>
+          </article>
+
+          <article class="era era--final">
+            <div class="era__year">2026</div>
+            <div class="era__media"><img src="assets/img/logo.jpg" alt="The Phonecoin glass phone" loading="lazy" /></div>
+            <div class="era__body"><h3>$PHONE</h3><p>The phone finally gets the coin it deserves. Fifty years of evolution, one ticker.</p></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HALL OF FAME ============ -->
+    <section class="famous" id="famous">
+      <div class="section-head section-head--center">
+        <span class="kicker">05 — Hall of Fame</span>
+        <h2 class="h2">Presidents, founders, pop stars.<br /><em>Not one of them can put it down.</em></h2>
+      </div>
+
+      <div class="wall" id="wall">
+        <!-- filled from gallery.js data so images & credits stay in one place -->
+      </div>
+
+      <p class="famous__note">Photos belong to their respective owners. Appearing here is not an endorsement — none of these people are affiliated with $PHONE.</p>
+    </section>
+
+    <!-- ============ TRADING ============ -->
+    <section class="trade" id="trade">
+      <div class="trade__glow" aria-hidden="true"></div>
+      <div class="trade__inner">
+        <div class="trade__copy">
+          <span class="kicker kicker--light">06 — The phone is the terminal</span>
+          <h2 class="h2 h2--light">Wall Street had terminals.<br /><em>We have phones.</em></h2>
+          <p class="trade__lead">Every memecoin you ever aped, you aped on your phone. From the bed, the bus, the bathroom. Memecoin trading was born mobile — wallet in one app, chart in another, alpha in the group chat, all under your thumb. $PHONE is a salute to the machine that made every degen possible.</p>
+
+          <div class="features">
+            <div class="feat"><span class="feat__ico"><svg class="i" aria-hidden="true"><use href="#i-candles"/></svg></span><div><b>Charts in your palm</b><p>Candles at 3am, lit by nothing but your screen.</p></div></div>
+            <div class="feat"><span class="feat__ico"><svg class="i" aria-hidden="true"><use href="#i-swap"/></svg></span><div><b>One-tap swaps</b><p>Solana confirms faster than your thumb leaves the glass.</p></div></div>
+            <div class="feat"><span class="feat__ico"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span><div><b>Alpha lives in chats</b><p>Group chats are the new trading floor.</p></div></div>
+            <div class="feat"><span class="feat__ico"><svg class="i" aria-hidden="true"><use href="#i-bolt"/></svg></span><div><b>Always on</b><p>Markets never close. Neither does your phone.</p></div></div>
+          </div>
+        </div>
+
+        <div class="trade__device">
+          <div class="device device--trade">
+            <div class="device__frame">
+              <div class="device__island"></div>
+              <div class="device__screen device__screen--dark">
+                <div class="scr__status scr__status--light"><span id="tradeClock">3:07</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+                <div class="tt__head">
+                  <div class="tt__token"><img src="assets/favicon-32.png" srcset="assets/apple-touch-icon.png 2x" alt="" /><div><b>$PHONE</b><small>Phonecoin · Solana</small></div></div>
+                  <div class="tt__tf"><span>1m</span><b>5m</b><span>1h</span><span>1d</span></div>
+                </div>
+                <div class="tt__price"><span id="ttPrice">$0.004206</span><em id="ttChange"><svg class="i" aria-hidden="true"><use href="#i-up"/></svg> 69.42%</em></div>
+                <canvas id="tradeChart" class="tt__chart" width="720" height="760"></canvas>
+                <div class="tt__swap">
+                  <div class="tt__row"><small>You pay</small><b>1.00 SOL</b></div>
+                  <div class="tt__row"><small>You receive</small><b id="ttReceive">4,206,900 $PHONE</b></div>
+                  <div class="tt__btn">Swap</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="toasts" id="toasts" aria-hidden="true"></div>
+        </div>
+      </div>
+      <p class="trade__disc">Chart and numbers on the phone are an animation for fun, not live market data.</p>
+    </section>
+
+    <!-- ============ HOW TO BUY ============ -->
+    <section class="buy" id="buy">
+      <div class="section-head section-head--center">
+        <span class="kicker">07 — How to buy</span>
+        <h2 class="h2">Four steps.<br /><em>Step one is already done.</em></h2>
+      </div>
+      <div class="steps">
+        <article class="step glass tilt">
+          <span class="step__n">01</span>
+          <h3>Pick up your phone</h3>
+          <p>Check your hand. It's already there. Congratulations, you're 25% of the way.</p>
+        </article>
+        <article class="step glass tilt">
+          <span class="step__n">02</span>
+          <h3>Get a Solana wallet</h3>
+          <p>Download Phantom, Solflare or any Solana wallet from your app store and write down your recovery phrase — on paper, not your phone.</p>
+        </article>
+        <article class="step glass tilt">
+          <span class="step__n">03</span>
+          <h3>Load some SOL</h3>
+          <p>Buy SOL inside the wallet or send it from an exchange. Keep a little extra for network fees (they're tiny).</p>
+        </article>
+        <article class="step glass tilt">
+          <span class="step__n">04</span>
+          <h3>Swap for $PHONE</h3>
+          <p>Paste the official contract address into Jupiter or your favourite Solana DEX and swap. Only trust the CA posted here and on our socials.</p>
+        </article>
+      </div>
+
+      <div class="token glass">
+        <div class="token__grid">
+          <div><small>Name</small><b>Phonecoin</b></div>
+          <div><small>Ticker</small><b>$PHONE</b></div>
+          <div><small>Chain</small><b>Solana</b></div>
+          <div><small>Supply</small><b><span data-count="1000000000" data-sep>0</span></b></div>
+        </div>
+        <button class="ca ca--wide" type="button" data-ca>
+          <span class="ca__label">Contract address</span>
+          <span class="ca__value">Coming soon</span>
+          <span class="ca__live"><span class="dot dot--pulse"></span> notifications on</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final" id="final">
+      <div class="aurora aurora--soft" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="final__timer">You've spent <b id="siteTime">00:00</b> on this site. On your phone, probably.</p>
+      <h2 class="final__title"><span>Don't</span> <span>put</span> <span>it</span> <em>down.</em></h2>
+      <div class="final__cta">
+        <a href="#buy" class="btn btn--dark magnetic">Buy $PHONE</a>
+        <a href="#" class="btn btn--glass magnetic" data-social="x" aria-label="Phonecoin on X"><svg class="i" aria-hidden="true"><use href="#i-xlogo"/></svg> Follow</a>
+        <a href="#" class="btn btn--glass magnetic" data-social="tg" aria-label="Phonecoin on Telegram"><svg class="i" aria-hidden="true"><use href="#i-telegram"/></svg> Telegram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__top">
+      <a href="#top" class="nav__brand"><img src="assets/favicon-32.png" srcset="assets/apple-touch-icon.png 2x" alt="" width="32" height="32" /><span>Phonecoin</span></a>
+      <p>$PHONE is a memecoin with no intrinsic value or expectation of financial return. It is for entertainment only. Crypto is volatile — never invest more than you can afford to lose. Not financial advice.</p>
+    </div>
+    <details class="credits">
+      <summary>Photo credits &amp; licences</summary>
+      <ul id="credits"></ul>
+      <p>Phone illustrations and interface mock-ups are original artwork for this site. Hall of Fame photos belong to their respective owners. The people pictured are not affiliated with and do not endorse Phonecoin.</p>
+    </details>
+    <div class="foot__bottom"><span>© 2026 Phonecoin</span><a href="#" class="foot__x" data-social="x" aria-label="Phonecoin on X"><svg class="i" aria-hidden="true"><use href="#i-xlogo"/></svg> Follow $PHONE on X</a><span>Made on a phone. Obviously.</span></div>
+  </footer>
+
+
+  <!-- ============ STICKY PHONE BUTTON + DRAWER WITH A WORKING MINI PHONE ============ -->
+  <button class="ptab" id="drawerTab" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open the $PHONE phone">
+    <span class="ptab__phone" aria-hidden="true">
+      <span class="ptab__island"></span>
+      <span class="ptab__screen"><i></i><i></i><i></i><i></i><i></i></span>
+    </span>
+    <span class="ptab__txt">$PHONE</span>
+  </button>
+
+  <div class="pdrawer" id="drawer" aria-hidden="true">
+    <div class="pdrawer__backdrop" data-close></div>
+    <aside class="pdrawer__panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <button class="pdrawer__close" type="button" data-close aria-label="Close"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <div class="pdrawer__head">
+        <span class="kicker">Your new phone</span>
+        <h3 id="drawerTitle">$PHONE, <em>in your pocket.</em></h3>
+      </div>
+
+      <div class="pdrawer__stage">
+        <div class="device pdrawer__device" id="drawerDevice">
+          <div class="device__frame">
+            <div class="device__island"></div>
+            <div class="device__screen os" id="os">
+
+              <div class="os__status"><span class="js-clock">9:41</span><svg class="i i-status" aria-hidden="true"><use href="#i-status"/></svg></div>
+
+              <!-- HOME -->
+              <section class="os__screen os__home is-active" data-screen="home" aria-label="Home screen">
+                <div class="os__clock"><div class="os__time js-clock">9:41</div><div class="os__date js-date">Today</div></div>
+                <button class="os__widget" type="button" data-open="chart">
+                  <img src="assets/apple-touch-icon.png" alt="" />
+                  <span><b>$PHONE</b><small id="osWidgetSub">Launching soon on pump.fun</small></span>
+                  <svg class="os__spark" viewBox="0 0 60 24" aria-hidden="true"><path d="M1 20l8-4 6 3 8-9 7 4 9-10 8 5 12-8" fill="none" stroke="#2fd27a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <div class="os__grid">
+                  <button class="app" type="button" data-open="pump"><span class="app__ico app--pump"><svg class="i"><use href="#i-rocket"/></svg></span><small>pump.fun</small></button>
+                  <button class="app" type="button" data-open="wallet"><span class="app__ico app--wallet"><svg class="i"><use href="#i-wallet"/></svg></span><small>Wallet</small></button>
+                  <button class="app" type="button" data-open="photos"><span class="app__ico app--photos"><svg class="i"><use href="#i-image"/></svg></span><small>Photos</small></button>
+                  <button class="app" type="button" data-open="calc"><span class="app__ico app--calc"><svg class="i"><use href="#i-calc"/></svg></span><small>Calculator</small></button>
+                  <button class="app" type="button" data-open="notes"><span class="app__ico app--notes"><svg class="i"><use href="#i-note"/></svg></span><small>Notes</small></button>
+                  <button class="app" type="button" data-open="settings"><span class="app__ico app--settings"><svg class="i"><use href="#i-gear"/></svg></span><small>Settings</small></button>
+                  <button class="app" type="button" data-link="x"><span class="app__ico app--x"><svg class="i"><use href="#i-xlogo"/></svg></span><small>X</small></button>
+                  <button class="app" type="button" data-link="tg"><span class="app__ico app--tg"><svg class="i"><use href="#i-telegram"/></svg></span><small>Telegram</small></button>
+                </div>
+                <div class="os__dock">
+                  <button class="app" type="button" data-open="call" aria-label="Phone"><span class="app__ico app--call"><svg class="i"><use href="#i-handset"/></svg></span></button>
+                  <button class="app" type="button" data-open="msgs" aria-label="Messages"><span class="app__ico app--msgs"><svg class="i"><use href="#i-chat"/></svg></span><span class="app__badge">99+</span></button>
+                  <button class="app" type="button" data-open="chart" aria-label="$PHONE chart"><span class="app__ico app--chart"><svg class="i"><use href="#i-candles"/></svg></span></button>
+                </div>
+              </section>
+
+              <!-- CHART -->
+              <section class="os__screen os__app os__app--dark" data-screen="chart" aria-label="$PHONE chart">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>$PHONE · 1m</b><span></span></header>
+                <div class="pd__frame" id="pdFrameWrap" hidden><iframe id="pdFrame" title="$PHONE live chart, 1 minute candles" referrerpolicy="no-referrer"></iframe></div>
+                <div class="pd__soon" id="pdSoon">
+                  <div class="pd__token"><img src="assets/apple-touch-icon.png" alt="" /><div><b>Phonecoin</b><small>$PHONE · Solana</small></div></div>
+                  <div class="pd__badge"><span class="dot dot--pulse"></span> Launching soon</div>
+                  <div class="pd__curve"><div class="pd__curve-top"><small>Bonding curve</small><b>0%</b></div><span><i></i></span></div>
+                  <div class="pd__rows">
+                    <div><small>Market cap</small><b>—</b></div>
+                    <div><small>Holders</small><b>you, soon</b></div>
+                    <div><small>Chart</small><b>1m candles at launch</b></div>
+                  </div>
+                  <div class="pd__skel"><i></i><i></i><i></i></div>
+                </div>
+              </section>
+
+              <!-- PUMP.FUN -->
+              <section class="os__screen os__app os__app--dark" data-screen="pump" aria-label="pump.fun">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>pump.fun</b><span></span></header>
+                <div class="pump">
+                  <span class="pump__ico"><svg class="i"><use href="#i-rocket"/></svg></span>
+                  <h4>$PHONE on pump.fun</h4>
+                  <p>pump.fun only opens in its own tab, so this app hands you straight to the official $PHONE page.</p>
+                  <a class="pump__btn" id="pumpLink" href="https://pump.fun" target="_blank" rel="noopener">Open pump.fun <svg class="i"><use href="#i-external"/></svg></a>
+                  <small id="pumpState">Contract address: coming soon</small>
+                </div>
+              </section>
+
+              <!-- WALLET -->
+              <section class="os__screen os__app" data-screen="wallet" aria-label="Wallet">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>Wallet</b><span></span></header>
+                <div class="wal">
+                  <div class="wal__card"><small>Balance</small><b>0 $PHONE</b><span>Fix that.</span></div>
+                  <ol class="wal__steps">
+                    <li><b>Get a Solana wallet</b><span>Phantom, Solflare or any Solana wallet.</span></li>
+                    <li><b>Load SOL</b><span>Buy in-app or send from an exchange.</span></li>
+                    <li><b>Swap for $PHONE</b><span>Paste the official CA on pump.fun or Jupiter.</span></li>
+                  </ol>
+                  <button class="wal__ca" type="button" data-ca><svg class="i"><use href="#i-copy"/></svg><span class="ca__value">CA: coming soon</span></button>
+                </div>
+              </section>
+
+              <!-- PHOTOS -->
+              <section class="os__screen os__app" data-screen="photos" aria-label="Photos">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>Photos</b><span></span></header>
+                <div class="pho" id="osPhotos"></div>
+                <button class="pho__view" id="osPhotoView" type="button" hidden aria-label="Close photo"><img alt="" /></button>
+              </section>
+
+              <!-- CALCULATOR -->
+              <section class="os__screen os__app os__app--dark" data-screen="calc" aria-label="Calculator">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>Calculator</b><span></span></header>
+                <div class="calc">
+                  <div class="calc__out" id="calcOut" aria-live="polite">0</div>
+                  <div class="calc__keys" id="calcKeys">
+                    <button type="button" data-k="C" class="k--fn">AC</button><button type="button" data-k="±" class="k--fn">+/−</button><button type="button" data-k="%" class="k--fn">%</button><button type="button" data-k="/" class="k--op">÷</button>
+                    <button type="button" data-k="7">7</button><button type="button" data-k="8">8</button><button type="button" data-k="9">9</button><button type="button" data-k="*" class="k--op">×</button>
+                    <button type="button" data-k="4">4</button><button type="button" data-k="5">5</button><button type="button" data-k="6">6</button><button type="button" data-k="-" class="k--op">−</button>
+                    <button type="button" data-k="1">1</button><button type="button" data-k="2">2</button><button type="button" data-k="3">3</button><button type="button" data-k="+" class="k--op">+</button>
+                    <button type="button" data-k="0" class="k--zero">0</button><button type="button" data-k=".">.</button><button type="button" data-k="=" class="k--op">=</button>
+                  </div>
+                </div>
+              </section>
+
+              <!-- NOTES -->
+              <section class="os__screen os__app" data-screen="notes" aria-label="Notes">
+                <header class="app__bar app__bar--notes"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Notes</button><b></b><span></span></header>
+                <article class="note-doc">
+                  <h4>lore.txt</h4>
+                  <small>Edited just now</small>
+                  <p>Nobody lives without a phone anymore.</p>
+                  <p>We wake up to it, eat with it, take it to the toilet, the shower and the gym, and fall asleep on it.</p>
+                  <p>It's our bank, our map, our camera, our friends and our casino.</p>
+                  <p>It's the most held asset in the world. Nobody has ever paper-handed it.</p>
+                  <p><b>So it finally gets a coin. $PHONE.</b></p>
+                </article>
+              </section>
+
+              <!-- SETTINGS -->
+              <section class="os__screen os__app" data-screen="settings" aria-label="Settings">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>Settings</b><span></span></header>
+                <div class="set">
+                  <div class="set__group">
+                    <button type="button" class="set__row" data-toggle="airplane"><span class="set__ico" style="--c:#ff9f43"><svg class="i"><use href="#i-plane"/></svg></span>Airplane mode<span class="pd__switch"><i></i></span></button>
+                    <button type="button" class="set__row" data-toggle="notify" id="pdNotify" aria-pressed="false"><span class="set__ico" style="--c:#ff4d63"><svg class="i"><use href="#i-bell"/></svg></span>Notify at launch<span class="pd__switch"><i></i></span></button>
+                    <button type="button" class="set__row" data-toggle="wallpaper"><span class="set__ico" style="--c:#6f7ff5"><svg class="i"><use href="#i-image"/></svg></span>Wallpaper<em>Change</em></button>
+                  </div>
+                  <div class="set__group">
+                    <div class="set__row"><span class="set__ico" style="--c:#8a7bff"><svg class="i"><use href="#i-hourglass"/></svg></span>Screen Time limit<em>Off, forever</em></div>
+                    <div class="set__row"><span class="set__ico" style="--c:#2fd27a"><svg class="i"><use href="#i-battery"/></svg></span>Battery<em>Always 1%</em></div>
+                    <div class="set__row"><span class="set__ico" style="--c:#4f8dff"><svg class="i"><use href="#i-phone"/></svg></span>Model<em>$PHONE Pro Max</em></div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- MESSAGES -->
+              <section class="os__screen os__app" data-screen="msgs" aria-label="Messages">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>$PHONE holders</b><span></span></header>
+                <div class="chat2" id="chatLog">
+                  <div class="msg msg--in">gm. who else is reading this on their phone</div>
+                  <div class="msg msg--in">ser wen CA</div>
+                  <div class="msg msg--out">soon. phone in hand, notifications on</div>
+                  <div class="msg msg--in">just took my phone into the shower to check</div>
+                </div>
+                <form class="chat2__form" id="chatForm" autocomplete="off">
+                  <input id="chatInput" type="text" maxlength="120" placeholder="Message" aria-label="Message" />
+                  <button type="submit" aria-label="Send"><svg class="i"><use href="#i-up"/></svg></button>
+                </form>
+              </section>
+
+              <!-- PHONE / CALL -->
+              <section class="os__screen os__app" data-screen="call" aria-label="Phone">
+                <header class="app__bar"><button type="button" class="app__back" data-home><svg class="i"><use href="#i-back"/></svg>Home</button><b>Favorites</b><span></span></header>
+                <div class="fav">
+                  <button type="button" class="fav__row" data-call="Mom" data-line="She's on her phone. Ironically."><i>M</i><span><b>Mom</b><small>mobile</small></span><svg class="i"><use href="#i-handset"/></svg></button>
+                  <button type="button" class="fav__row" data-call="The Dev" data-line="Busy. Shipping. Call back after launch."><i>D</i><span><b>The Dev</b><small>mobile</small></span><svg class="i"><use href="#i-handset"/></svg></button>
+                  <button type="button" class="fav__row" data-call="Whale" data-line="Didn't pick up. Probably buying."><i>W</i><span><b>Whale</b><small>unknown</small></span><svg class="i"><use href="#i-handset"/></svg></button>
+                  <button type="button" class="fav__row" data-call="Your Boss" data-line="Declined. He's checking the chart too."><i>B</i><span><b>Your Boss</b><small>work</small></span><svg class="i"><use href="#i-handset"/></svg></button>
+                </div>
+                <div class="calling" id="calling" hidden>
+                  <div class="calling__av" id="callAv">M</div>
+                  <b id="callName">Mom</b>
+                  <small id="callState">calling…</small>
+                  <button type="button" class="calling__end" id="callEnd" aria-label="End call"><svg class="i"><use href="#i-handset"/></svg></button>
+                </div>
+              </section>
+
+              <button class="os__homebar" type="button" data-home aria-label="Go to home screen"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="pdrawer__note">Tap the apps. pump.fun can't be embedded on other sites, so its app opens the official page in a new tab; the chart app shows live 1-minute candles once $PHONE trades.</p>
+    </aside>
+  </div>
+
+  <div class="toast-ca" id="toastCa" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="gallery.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
