@@ -141,6 +141,12 @@ em { font-family: var(--f-serif); font-style: italic; font-weight: 400; letter-s
 .ca__live { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); padding-right: 6px; }
 .ca--wide { width: 100%; justify-content: flex-start; padding: 10px; }
 .ca--wide .ca__live { margin-left: auto; }
+.ca--wide .ca__value { font-size: clamp(12px, 1.4vw, 17px); word-break: break-all; text-align: left; }
+.ca__live .i { width: 14px; height: 14px; }
+.ca { transition: background .25s, transform .25s; }
+.ca:hover { background: rgba(255,255,255,.75); }
+.token__links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 560px) { .token__links { grid-template-columns: 1fr; } .ca--wide { flex-wrap: wrap; border-radius: 22px; } }
 
 /* =========================================================
    LOCK SCREEN
@@ -1087,3 +1093,6 @@ body.is-loading .ptab, body.drawer-open .ptab { translate: 160% -50%; opacity: 0
 .og-shot .ptab, .og-shot .hero__scroll, .og-shot .lock, .og-shot .marquee, .og-shot .toast-ca { display: none !important; }
 .og-shot .float { animation: none; }
 .og-shot .hero { min-height: 630px; height: 630px; padding-top: 96px; padding-bottom: 26px; }
+
+/* respect the hidden attribute on flex/grid containers */
+[hidden] { display: none !important; }

@@ -3,7 +3,7 @@
    Edit CONFIG when the contract address / socials are live.
    ========================================================= */
 const CONFIG = {
-  ca: "",          // e.g. "PHoNE....pump" — leave empty to show "Coming soon"
+  ca: "J3L6zfraT8wbzcgZv8eXTsgvcLZBys6Z63HpHTpmpump",   // leave empty to show "Coming soon"
   x: "https://x.com/phonecoin_",
   telegram: ""     // e.g. "https://t.me/phonecoin"
 };
@@ -42,13 +42,24 @@ const CONFIG = {
   }
 
   /* ---------------- CA + socials ---------------- */
+  const caShort = CONFIG.ca ? CONFIG.ca.slice(0, 6) + "…" + CONFIG.ca.slice(-6) : "";
   $$("[data-ca]").forEach((btn) => {
-    if (CONFIG.ca) $(".ca__value", btn).textContent = CONFIG.ca.slice(0, 6) + "…" + CONFIG.ca.slice(-6);
+    // the wide token card shows the full address; compact pills show a short form
+    if (CONFIG.ca) $(".ca__value", btn).textContent = btn.classList.contains("ca--wide") ? CONFIG.ca : caShort;
+    if (CONFIG.ca) btn.setAttribute("aria-label", "Copy contract address " + CONFIG.ca);
     btn.addEventListener("click", async () => {
       if (!CONFIG.ca) return toast("CA drops soon. Keep your notifications on.");
       try { await navigator.clipboard.writeText(CONFIG.ca); toast("Contract address copied."); }
       catch (e) { toast(CONFIG.ca); }
     });
+  });
+  // buy / chart links: straight to the live token once the CA is set
+  const buyUrl = CONFIG.ca ? "https://pump.fun/coin/" + encodeURIComponent(CONFIG.ca) : "";
+  const chartUrl = CONFIG.ca ? "https://dexscreener.com/solana/" + encodeURIComponent(CONFIG.ca) : "";
+  $$("[data-buy]").forEach((a) => {
+    const url = a.dataset.buy === "dex" ? chartUrl : buyUrl;
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+    else if (a.dataset.buy === "dex") a.hidden = true;
   });
   $$("[data-social]").forEach((a) => {
     const url = a.dataset.social === "x" ? CONFIG.x : CONFIG.telegram;
@@ -63,7 +74,7 @@ const CONFIG = {
   const pumpUrl = CONFIG.ca ? "https://pump.fun/coin/" + encodeURIComponent(CONFIG.ca) : "https://pump.fun";
   $("#pumpLink").href = pumpUrl;
   if (CONFIG.ca) {
-    $("#pumpState").textContent = "CA: " + CONFIG.ca.slice(0, 6) + "…" + CONFIG.ca.slice(-6);
+    $("#pumpState").textContent = "CA: " + caShort;
     $("#osWidgetSub").textContent = "Live · tap for 1m chart";
   }
 
