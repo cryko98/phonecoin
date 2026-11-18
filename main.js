@@ -4,7 +4,7 @@
    ========================================================= */
 const CONFIG = {
   ca: "",          // e.g. "PHoNE....pump" — leave empty to show "Coming soon"
-  x: "",           // e.g. "https://x.com/phonecoin"
+  x: "https://x.com/phonecoin_",
   telegram: ""     // e.g. "https://t.me/phonecoin"
 };
 
